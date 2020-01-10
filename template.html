@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_top">
+    <?!= include('style'); ?>
+	<meta charset="UTF-8">
+	<title>Saying Theater Booking System</title>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous" defer></script>
+    
+    
+    <script src="_Script/_script.js" defer></script>
+    
+    <link rel="stylesheet" href="_CSS/_style.css">
+</head>
+
+
+<body>
+<?!= include('javaScript'); ?>
+    <div class="jumbotron">
+		<div class="container">	 
+		  <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="about">
+			 <div class="row featurette">
+		        <div class="col-md-7">
+		          <h2 class="featurette-heading">Welcome to Saying Theatre Online Reservation Tool</h2>
+                  <br>
+                  欢迎使用戏言网上选座工具</h2><br>
+		          <p class="lead">
+                  Red Rose White Rose 红玫瑰与白玫瑰
+                  <br>
+                  4/11/2020 7:00 pm - 9:00 pm | 4/12/2020 3:00 pm - 5:00 pm
+                  <br>
+                  <br>
+                  Please scroll down to make your seat reservation 请下滑预约
+                  </p>
+		        </div>
+                <!-->
+		        <!--<div class="col-md-5">
+		          <img class="img-responsive center-block" src="image/imgHolder.png">
+		        </div>-->
+                
+		      </div>
+
+		      <hr class="featurette-divider">
+		</div>
+		<div id="booking">
+            <form class="booking-form" action="" method="post">
+                <div class="row">
+					<div class="form-group col-sm-12">
+						<label for="name" class="control-label">Name: </label>
+						<input type="text" class="form-control" name="contact-name" placeholder="Name">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-12">
+					    <label for="exampleInputEmail1" class="control-label">Email address: </label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					  </div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<button type="submit" class="form-control btn btn-primary">Submit</button>				
+					</div>
+					<div class="form-group col-sm-6">
+						<button type="reset" class="form-control btn btn-primary">Reset</button>					
+					</div>
+                 </div>
+                 </form>
+                 <p class="lead text-center">Please select your seat based on the seating chart</p>
+            <!--change link when find the seating chart-->
+            <div class = "seatingMap">
+            <p>Selected seats: <label id= "selectedSeatNum">0</label></p>
+            <svg class = "seatingCanvas" width= "100%" viewBox = "0 0 750 400" xmlns="http://www.w3.org/2000/svg">
+            <!--<circle class = "emptySeat" id = "test" r="5" cx="1" cy="1" fill="#ffffff" onclick = "chooseSeat(this)"/<circle class = "emptySeat" id = "test" r="5" cx="1" cy="1" fill="#ffffff" onclick = "chooseSeat(this)"/-->
+            <!--Stage Line-->
+            <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="stage_line" y2="170" x2="460" y1="170" x1="290" stroke-width="1.5" fill="none"/>
+            <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="stage_line" y2="20" x2="190" y1="170" x1="290" stroke-width="1.5" fill="none"/>
+            <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="stage_line" y2="20" x2="560" y1="170" x1="460" stroke-width="1.5" fill="none"/>
+            <!--Stage Label-->
+            <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_1" y="160" x="345" stroke-width="0" stroke="#000" fill="#000000">Stage</text>
+            <!--Seat Letter Label-->
+            <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_1" y="187" x="275" stroke-width="0" stroke="#000" fill="#C3C3C3">A</text>
+            <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_1" y="207" x="255" stroke-width="0" stroke="#000" fill="#C3C3C3">B</text>
+
+            <!--Central seat block-->
+            <!--A1 to A9-->
+            <circle class = "emptySeat" id = "A1" r="5" cx="295" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A2" r="5" cx="315" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A3" r="5" cx="335" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A4 "r="5" cx="355" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A5 "r="5" cx="375" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A6 "r="5" cx="395" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A7 "r="5" cx="415" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A8 "r="5" cx="435" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "A9 "r="5" cx="455" cy="185" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+           
+            <!--B1 to B11 -->
+            <circle class = "emptySeat" id = "B1" r="5" cx="275" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B2" r="5" cx="295" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B3" r="5" cx="315" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B4"r="5" cx="335" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B5"r="5" cx="355" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B6"r="5" cx="375" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B7"r="5" cx="395" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B8"r="5" cx="415" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B9"r="5" cx="435" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B10"r="5" cx="455" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "B11"r="5" cx="475" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            
+            <!--C1 to C13 -->
+            <circle class = "emptySeat" id = "C1" r="5" cx="255" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C2" r="5" cx="275" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C3" r="5" cx="295" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C4" r="5" cx="315" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C5"r="5" cx="335" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C6"r="5" cx="355" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C7"r="5" cx="375" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C8"r="5" cx="395" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C9"r="5" cx="415" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C10"r="5" cx="435" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C11"r="5" cx="455" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C12"r="5" cx="475" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "C13"r="5" cx="495" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <!--D1 to D18 -->
+            <circle class = "emptySeat" id = "D1" r="5" cx="205" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D2" r="5" cx="225" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D3" r="5" cx="245" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D4" r="5" cx="265" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D5" r="5" cx="285" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D6" r="5" cx="305" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D7" r="5" cx="325" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D8"r="5" cx="345" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D9"r="5" cx="365" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D10"r="5" cx="385" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D11"r="5" cx="405" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D12"r="5" cx="425" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D13"r="5" cx="445" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D14"r="5" cx="465" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D15"r="5" cx="485" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "D16"r="5" cx="505" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "D17"r="5" cx="525" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "D18"r="5" cx="545" cy="245" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             
+             <!--E8 to E29-->
+             <circle class = "emptySeat" id = "E8" r="5" cx="165" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E9" r="5" cx="185" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E10" r="5" cx="205" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E11" r="5" cx="225" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E12" r="5" cx="245" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E13" r="5" cx="265" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E14" r="5" cx="285" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E15" r="5" cx="305" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E16" r="5" cx="325" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E17"r="5" cx="345" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E18"r="5" cx="365" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E19"r="5" cx="385" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E20"r="5" cx="405" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E21"r="5" cx="425" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E22"r="5" cx="445" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E23"r="5" cx="465" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E24"r="5" cx="485" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+            <circle class = "emptySeat" id = "E25"r="5" cx="505" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E26"r="5" cx="525" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E27"r="5" cx="545" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E28"r="5" cx="565" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E29"r="5" cx="585" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--F9 to F31-->
+             <circle class = "emptySeat" id = "F9" r="5" cx="155" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F10" r="5" cx="175" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F11" r="5" cx="195" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F12" r="5" cx="215" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F13" r="5" cx="235" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F14" r="5" cx="255" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F15" r="5" cx="275" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F16" r="5" cx="295" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F17" r="5" cx="315" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F18" r="5" cx="335" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F19" r= "5" cx= "355" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F20"r="5" cx="375" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F21"r="5" cx="395" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F22"r="5" cx="415" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F23"r="5" cx="435" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F24"r="5" cx="455" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F25"r="5" cx="475" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F26"r="5" cx="495" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F27"r="5" cx="515" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F28"r="5" cx="535" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F29"r="5" cx="555" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F30"r="5" cx="575" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F31"r="5" cx="595" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--G10 to G34-->
+             <circle class = "emptySeat" id = "G10" r="5" cx="135" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G11" r="5" cx="155" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G12" r="5" cx="175" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G13" r="5" cx="195" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G14" r="5" cx="215" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G15" r="5" cx="235" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G16" r="5" cx="255" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G17" r="5" cx="275" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G18" r="5" cx="295" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G19" r="5" cx="315" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G20"r="5" cx="335" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G21"r="5" cx="355" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G22"r="5" cx="375" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G23"r="5" cx="395" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G24"r="5" cx="415" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G25"r="5" cx="435" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G26"r="5" cx="455" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G27"r="5" cx="475" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G28"r="5" cx="495" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G29"r="5" cx="515" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G30"r="5" cx="535" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G31"r="5" cx="555" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G32"r="5" cx="575" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G33"r="5" cx="595" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G34"r="5" cx="615" cy="305" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             
+             <!--H11 to H36-->
+             <circle class = "emptySeat" id = "H11" r="5" cx="125" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H12" r="5" cx="145" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H13" r="5" cx="165" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H14" r="5" cx="185" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H15" r="5" cx="205" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H16" r="5" cx="225" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H17" r="5" cx="245" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H18" r="5" cx="265" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H19" r="5" cx="285" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H20" r="5" cx="305" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H21"r="5" cx="325" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H22"r="5" cx="345" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H23"r="5" cx="365" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H24"r="5" cx="385" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H25"r="5" cx="405" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H26"r="5" cx="425" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H27"r="5" cx="445" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H28"r="5" cx="465" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H29"r="5" cx="485" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H30"r="5" cx="505" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H31"r="5" cx="525" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H32"r="5" cx="545" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H33"r="5" cx="565" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H34"r="5" cx="585" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H35"r="5" cx="605" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H36"r="5" cx="625" cy="325" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             
+             <!--I12 to I39-->
+             <circle class = "emptySeat" id = "I12" r="5" cx="119" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I13" r="5" cx="138" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I14" r="5" cx="157" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I15" r="5" cx="176" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I16" r="5" cx="195" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I17" r="5" cx="214" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I18" r="5" cx="233" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I19" r="5" cx="252" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I20" r="5" cx="271" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I21" r="5" cx="290" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I22"r="5" cx="309" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I23"r="5" cx="328" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I24"r="5" cx="347" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I25"r="5" cx="366" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I26"r="5" cx="385" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I27"r="5" cx="404" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I28"r="5" cx="423" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I29"r="5" cx="442" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I30"r="5" cx="461" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I31"r="5" cx="480" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I32"r="5" cx="499" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I33"r="5" cx="518" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I34"r="5" cx="537" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I35"r="5" cx="556" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I36"r="5" cx="575" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I37"r="5" cx="594" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I38"r="5" cx="613" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I39"r="5" cx="632" cy="345" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- end of center-->
+             <!--Right side of map(left side of stage)--><!-- x+=10, y-= 15-->
+             <!-- A108 to A114-->
+             <circle class = "emptySeat" id = "A108" r="5" cx="495" cy="150" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A109" r="5" cx="505" cy="135" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A110" r="5" cx="515" cy="120" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A111" r="5" cx="525" cy="105" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A112" r="5" cx="535" cy="90" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A113" r="5" cx="545" cy="75" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A113" r="5" cx="555" cy="60" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- B108 to B114-->
+             <circle class = "emptySeat" id = "B108" r="5" cx="510" cy="160" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B109" r="5" cx="520" cy="145" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B110" r="5" cx="530" cy="130" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B111" r="5" cx="540" cy="115" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B112" r="5" cx="550" cy="100" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B113" r="5" cx="560" cy="85" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B113" r="5" cx="570" cy="70" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- C108 to C114-->
+             <circle class = "emptySeat" id = "C108" r="5" cx="525" cy="170" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C109" r="5" cx="535" cy="155" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C110" r="5" cx="545" cy="140" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C111" r="5" cx="555" cy="125" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C112" r="5" cx="565" cy="110" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C113" r="5" cx="575" cy="95" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C113" r="5" cx="585" cy="80" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- D108 to D114-->
+             <circle class = "emptySeat" id = "C108" r="5" cx="540" cy="180" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C109" r="5" cx="550" cy="165" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C110" r="5" cx="560" cy="150" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C111" r="5" cx="570" cy="135" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C112" r="5" cx="580" cy="120" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C113" r="5" cx="590" cy="105" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C113" r="5" cx="600" cy="90" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- E33 to E39--><!--verify if this is right-->
+             <circle class = "emptySeat" id = "E33"r="5" cx="603" cy="257" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E34"r="5" cx="613" cy="242" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E35"r="5" cx="623" cy="227" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E36"r="5" cx="633" cy="212" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E37"r="5" cx="643" cy="197" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E38"r="5" cx="653" cy="182" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E39"r="5" cx="663" cy="167" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--F32 to F39-->
+             <circle class = "emptySeat" id = "F32"r="5" cx="613" cy="277" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F33"r="5" cx="623" cy="262" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F34"r="5" cx="633" cy="247" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F35"r="5" cx="643" cy="232" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F36"r="5" cx="653" cy="217" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F37"r="5" cx="663" cy="202" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F38"r="5" cx="673" cy="187" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F39"r="5" cx="683" cy="172" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--G35 to G43-->
+             <circle class = "emptySeat" id = "G35"r="5" cx="625" cy="292" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G36"r="5" cx="635" cy="277" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G37"r="5" cx="645" cy="262" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G38"r="5" cx="655" cy="247" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G39"r="5" cx="665" cy="232" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G40"r="5" cx="675" cy="217" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G41"r="5" cx="685" cy="202" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G42"r="5" cx="695" cy="187" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G43"r="5" cx="705" cy="172" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--H37 to H46-->
+             <circle class = "emptySeat" id = "H37"r="5" cx="635" cy="310" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H38"r="5" cx="645" cy="295" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H39"r="5" cx="655" cy="280" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H40"r="5" cx="665" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H41"r="5" cx="675" cy="250" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H42"r="5" cx="685" cy="235" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H43"r="5" cx="695" cy="220" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H44"r="5" cx="705" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H45"r="5" cx="715" cy="190" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H46"r="5" cx="725" cy="175" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- I40 to I50 -->
+             <circle class = "emptySeat" id = "I40"r="5" cx="642" cy="330" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I41"r="5" cx="652" cy="315" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I42"r="5" cx="662" cy="300" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I43"r="5" cx="672" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I44"r="5" cx="682" cy="270" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I45"r="5" cx="692" cy="255" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I46"r="5" cx="702" cy="240" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I47"r="5" cx="712" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I48"r="5" cx="722" cy="210" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I49"r="5" cx="732" cy="195" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I50"r="5" cx="742" cy="180" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--end of right side-->
+             <!--Left side of map(right side of stage)><!-- x-=10, y-= 15-->
+             <!-- A101 to A107-->
+             <circle class = "emptySeat" id = "A101" r="5" cx="255" cy="150" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A102" r="5" cx="245" cy="135" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A103" r="5" cx="235" cy="120" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A104" r="5" cx="225" cy="105" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A105" r="5" cx="215" cy="90" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A106" r="5" cx="205" cy="75" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "A107" r="5" cx="195" cy="60" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- B101 to B107-->
+             <circle class = "emptySeat" id = "B101" r="5" cx="240" cy="160" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B102" r="5" cx="230" cy="145" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B103" r="5" cx="220" cy="130" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B104" r="5" cx="210" cy="115" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B105" r="5" cx="200" cy="100" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B106" r="5" cx="190" cy="85" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "B107" r="5" cx="180" cy="70" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- C101 to C107-->
+             <circle class = "emptySeat" id = "C101" r="5" cx="225" cy="170" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C102" r="5" cx="215" cy="155" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C103" r="5" cx="205" cy="140" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C104" r="5" cx="195" cy="125" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C105" r="5" cx="185" cy="110" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C106" r="5" cx="175" cy="95" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C107" r="5" cx="165" cy="80" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- D101 to D107-->
+             <circle class = "emptySeat" id = "C108" r="5" cx="210" cy="180" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C109" r="5" cx="200" cy="165" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C110" r="5" cx="190" cy="150" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C111" r="5" cx="180" cy="135" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C112" r="5" cx="170" cy="120" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C113" r="5" cx="160" cy="105" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "C113" r="5" cx="150" cy="90" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- E1 to E7-->
+             <circle class = "emptySeat" id = "E33"r="5" cx="147" cy="257" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E34"r="5" cx="137" cy="242" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E35"r="5" cx="127" cy="227" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E36"r="5" cx="117" cy="212" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E37"r="5" cx="107" cy="197" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E38"r="5" cx="97" cy="182" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "E39"r="5" cx="87" cy="167" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--F1 to F8-->
+             <circle class = "emptySeat" id = "F1"r="5" cx="140" cy="277" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F2"r="5" cx="130" cy="262" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F3"r="5" cx="120" cy="247" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F4"r="5" cx="110" cy="232" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F5"r="5" cx="100" cy="217" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F6"r="5" cx="90" cy="202" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F7"r="5" cx="80" cy="187" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "F8"r="5" cx="70" cy="172" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--G1 to G9-->
+             <circle class = "emptySeat" id = "G1"r="5" cx="125" cy="292" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G2"r="5" cx="115" cy="277" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G3"r="5" cx="105" cy="262" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G4"r="5" cx="95" cy="247" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G5"r="5" cx="85" cy="232" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G6"r="5" cx="75" cy="217" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G7"r="5" cx="65" cy="202" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G8"r="5" cx="55" cy="187" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "G9"r="5" cx="45" cy="172" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--H1 to H10-->
+             <circle class = "emptySeat" id = "H1"r="5" cx="115" cy="310" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H2"r="5" cx="105" cy="295" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H3"r="5" cx="95" cy="280" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H4"r="5" cx="85" cy="265" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H5"r="5" cx="75" cy="250" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H6"r="5" cx="65" cy="235" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H7"r="5" cx="55" cy="220" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H8"r="5" cx="45" cy="205" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H9"r="5" cx="35" cy="190" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "H10"r="5" cx="25" cy="175" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!-- I1 to I11 -->
+             <circle class = "emptySeat" id = "I1"r="5" cx="109" cy="330" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I2"r="5" cx="99" cy="315" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I3"r="5" cx="89" cy="300" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I4"r="5" cx="79" cy="285" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I5"r="5" cx="69" cy="270" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I6"r="5" cx="59" cy="255" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I7"r="5" cx="49" cy="240" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I8"r="5" cx="39" cy="225" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I9"r="5" cx="29" cy="210" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I10"r="5" cx="19" cy="195" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <circle class = "emptySeat" id = "I11"r="5" cx="9" cy="180" fill="#D5F3BC" onclick = "chooseSeat(this)"/>
+             <!--End of left side-->
+            </svg>
+			</div>
+	</div>
+    </div>
+	<hr class="footer">	
+	<footer class="text-muted">
+		
+      <div class="container">
+        <p class="float-right">
+        </p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
