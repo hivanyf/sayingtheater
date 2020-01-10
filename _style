@@ -1,0 +1,56 @@
+ .jumbotron {
+	color: #FFF;
+	background-image: url(https://drive.google.com/uc?export=view&id=1l4-sb66NjP1dkmBsi8NRXCe9Q0vfkH7C);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 15vh;
+	padding-top: 30%
+}
+ 
+.featurette-heading{
+	margin-top: 10px;
+	font-size: 3em;
+  	font-weight: 200;
+  	line-height: 1;
+  	letter-spacing: -1px;
+}
+
+.featurette-divider{
+	margin:40px auto;
+}
+
+.seatingCanvas{
+    background: #FFFBF9;
+    display: block;
+    margin: auto;
+}
+
+#about{
+	margin-top: 30px;
+}
+
+.contact{
+	background: #EFF4EB;
+}
+
+footer{
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.booking-form{
+	margin: 20px 5vw;
+}
+
+.emptySeat:hover{
+    fill: #ACD888;
+}
+
+.selectedSeat:hover{
+    fill: #FE4848;
+}
+
+.takenSeat{
+    fill: #C0C0C0;
+}
