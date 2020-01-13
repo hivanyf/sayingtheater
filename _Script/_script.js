@@ -1,10 +1,8 @@
-
-    //var seatStatus = json_data; // json data would be replaced by python
+//var seatStatus = json_data; // json data would be replaced by python
     console.log("HERE")
 
-var selectedId = []
-var jsonFile = {}
-
+    var selectedID = [];
+    
     //google.script.run.withSuccessHandler(loadSelectedSeats).seatsTaken();
     window.addEventListener('load', function() {
      console.log('Page is loaded');
@@ -25,8 +23,8 @@ var jsonFile = {}
           seat.setAttribute("r", "3");
           seat.setAttribute("fill-opacity", "0.5");
           seat.setAttribute("fill", "#c44747");
-          seat.removeClass("emptySeat");
-          seat.addClass("takenSeat");
+          $(seat).removeClass("emptySeat");
+          $(seat).addClass("takenSeat");
         }
       }
     }
@@ -84,35 +82,35 @@ var jsonFile = {}
       //if the user has reached reservation maximum, give a warning and do nothing
         if(ifReachSelectionMax() == false){
           window.alert("You can only choose maximum 7 seats");
-        return;
+          return;
         }
+      let id = e.getAttribute("id");
+      selectedID.push(id);
+      document.getElementById("selectedSeat").textContent = selectedID;
       let seatNumLabel  = document.getElementById("selectedSeatNum");//get the number of user's current chosen seats
-    let seatLabel = e.getAttribute("id");
-        selectedId.push(seatLabel);
-    document.getElementById("selectedSeat").innerHTML = selectedId;
-    
       let updatedSeatNum = increaseSelectedSeat(seatNumLabel);//string
       seatNumLabel.textContent = updatedSeatNum;
       e.setAttribute("fill", "#FF8383");
-      e.addClass("selectedSeat");
-      e.removeClass("emptySeat");
+      $(e).addClass("selectedSeat");
+      $(e).removeClass("emptySeat");
+      //alert(e);
+      //selected.push();
       }
     //if the seat is avaliable and chosen
     else if(e.getAttribute("fill") === "#FF8383"){
+      let id = e.getAttribute("id");
+      for (let i = 0; i < selectedID.length; i++) {
+        if (id === selectedID[i])
+          selectedID.splice(i, 1);
+          break;
+      }
+      document.getElementById("selectedSeat").textContent = selectedID;
       e.setAttribute("fill", "#D5F3BC");
       let seatNumLabel  = document.getElementById("selectedSeatNum");//get the number of user's current chosen seats
-        let seatLabel = e.getAttribute("id")
-        for (let i = 0; i < selectedId.length; i++) {
-            if (seatLabel === selectedId[i]) {
-                selectedId.splice(i, 1);
-                break;
-            }
-        }
-        document.getElementById("selectedSeat").innerHTML = selectedId;
       let updatedSeatNum = decreaseSelectedSeat(seatNumLabel);//string
       seatNumLabel.textContent = updatedSeatNum;
-      e.addClass("emptySeat");
-      e.removeClass("selectedSeat");
+      $(e).addClass("emptySeat");
+      $(e).removeClass("selectedSeat");
       }
       //if the seat is not avaliable, will not do anything
     }
@@ -133,32 +131,23 @@ var jsonFile = {}
       return numSeatChosen.toString();
     }
 
-
-// Get the information when you hit submit, whihc is the POST part
-/*function getInfo() {
-    let name =  document.getElementById("exampleInputName1").innerHTML;
-    let email = document.getElementById("exampleInputEmail1").innerHTML;
-    let seatNum = document.getElementById("selectedSeatNum").textContent;
-    let seatNum2 = parseInt(seatNum);
-    if (name === "" && email === "" && seatNum2 === 0) {
-        alert("Please complete your info!");
-    } else if (name === "") {
-        alert("Pleast input your name!");
-        
-    } else if (email === "") {
-        alert ("Please input your email address!");
-    } else if (seatNum2 === 0) {
-         alert ("Please select seats!");
-        } else {
-            jsonFile = {
-                "name": name,
-                "seats": selectedId,
-                "email": email,
-            }
-        }
-        
-        
-    }*/
-    
-    
-    
+    function getInfo() {
+      let name = document.getElementById("exampleInputName1").value;
+      let email = document.getElementById("exampleInputEmail1").value;
+      if (name === "" && email === "") {
+        alert("Please enter your name and email information.");
+      } else if (email === "") {
+        alert("Please enter your email information.");
+      } else if (name === ""){
+        alert("Please enter your name information.");
+      }
+      var seatNum = document.getElementById("selectedSeatNum").textContent;
+      var seatNum2 = parseInt(seatNum);
+      if (seatNum2 === 0) {
+        alert("Please choose your seat.");
+      }
+      alert("Success!");
+      list
+    }
+/* Need to add a loop to check the seating status every time the webpage is refreshed or opened accordingly
+The change of seating status is supposed to be done by Python */
