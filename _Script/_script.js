@@ -25,8 +25,8 @@ var jsonFile = {}
           seat.setAttribute("r", "3");
           seat.setAttribute("fill-opacity", "0.5");
           seat.setAttribute("fill", "#c44747");
-          $(seat).removeClass("emptySeat");
-          $(seat).addClass("takenSeat");
+          seat.removeClass("emptySeat");
+          seat.addClass("takenSeat");
         }
       }
     }
@@ -94,8 +94,8 @@ var jsonFile = {}
       let updatedSeatNum = increaseSelectedSeat(seatNumLabel);//string
       seatNumLabel.textContent = updatedSeatNum;
       e.setAttribute("fill", "#FF8383");
-      $(e).addClass("selectedSeat");
-      $(e).removeClass("emptySeat");
+      e.addClass("selectedSeat");
+      e.removeClass("emptySeat");
       }
     //if the seat is avaliable and chosen
     else if(e.getAttribute("fill") === "#FF8383"){
@@ -111,8 +111,8 @@ var jsonFile = {}
         document.getElementById("selectedSeat").innerHTML = selectedId;
       let updatedSeatNum = decreaseSelectedSeat(seatNumLabel);//string
       seatNumLabel.textContent = updatedSeatNum;
-      $(e).addClass("emptySeat");
-      $(e).removeClass("selectedSeat");
+      e.addClass("emptySeat");
+      e.removeClass("selectedSeat");
       }
       //if the seat is not avaliable, will not do anything
     }
